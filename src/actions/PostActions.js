@@ -22,9 +22,11 @@ export const getPostsForUser = (userId) => {
            
         }
     };
- export const selectPost = (postId) => {
+ export const selectPost = (post) => {
+       
         return {
           type: SELECTED_POST,
-          payload: postId
-        };
-      };
+          payload: post
+      }
+   };
+

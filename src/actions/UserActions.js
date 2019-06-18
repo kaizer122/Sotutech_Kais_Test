@@ -20,10 +20,10 @@ export const usersFetchAll = () => {
            
         }
     };
-    export const selectUser = (userId) => {
+    export const selectUser = (user) => {
       return {
         type: SELECTED_USER,
-        payload: userId
+        payload: user
       };
     };
     

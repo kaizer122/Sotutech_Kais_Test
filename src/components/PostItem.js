@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { CardSection } from './common';
-import {selectPost} from '../actions';
+import { selectPost , commentShow } from '../actions';
 
 class PostItem extends PureComponent {
   componentWillUpdate() {
@@ -16,15 +16,18 @@ class PostItem extends PureComponent {
 
   render() {
     const { titleStyle } = styles;
-    const { id, title } = this.props.post;
+    const { post } = this.props;
     return (
       <TouchableOpacity 
-        onPress={() => this.props.selectPost(id) }
+        onPress={() => {
+          this.props.selectPost(post) 
+          this.props.commentShow(post.id)}
+          }
       >
         <View>
           <CardSection>
             <Text style={titleStyle}>
-              {title}
+              {post.title}
             </Text>
           </CardSection>
       
@@ -45,9 +48,7 @@ const styles = {
 };
 
 const mapStateToProps = state => {
-console.log(state.selectedPost)
   return { selectedPost: state.selectedPost };
 };
 
-
-export default connect(mapStateToProps , {selectPost} ) ( PostItem );
+export default connect(mapStateToProps , {selectPost , commentShow} ) ( PostItem );

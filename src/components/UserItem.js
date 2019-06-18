@@ -42,18 +42,19 @@ class UserItem extends PureComponent {
 
   render() {
     const { titleStyle } = styles;
-    const { id, username } = this.props.user.item;
+    const { user } = this.props;
+
     return (
       <TouchableWithoutFeedback 
         onPress={() => {
-          this.props.selectUser(id);
-          this.props.getPostsForUser(id);
+          this.props.selectUser(user);
+          this.props.getPostsForUser(user.id);
         } }
       >
         <View>
           <CardSection>
             <Text style={titleStyle}>
-              {username}
+              {user.username}
             </Text>
           </CardSection>
           {this.renderPosts()}
@@ -77,8 +78,7 @@ const styles = {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  const expanded = state.selectedUser === ownProps.user.item.id;
-
+  const expanded = state.selectedUser.id === ownProps.user.id;
   return {
     expanded ,
     posts: state.posts

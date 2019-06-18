@@ -1,7 +1,10 @@
 import {
     SELECTED_USER
   } from '../actions/types';
-export default (state = null, action) => {
+
+  const INITIAL_STATE = [];
+
+export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
       case SELECTED_USER:
         return action.payload;

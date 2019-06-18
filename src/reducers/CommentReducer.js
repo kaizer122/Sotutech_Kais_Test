@@ -1,12 +1,12 @@
 import {
-    SELECTED_POST
+    COMMENT_SHOW,
   } from '../actions/types';
   
   const INITIAL_STATE = [];
-
-export default (state = INITIAL_STATE, action) => {
+  
+  export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-      case SELECTED_POST:
+      case COMMENT_SHOW:
         return action.payload;
       default:
         return state;

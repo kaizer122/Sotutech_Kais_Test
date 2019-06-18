@@ -11,7 +11,7 @@ class UserList extends PureComponent {
   }
 
   renderItem(user) {
-    return <UserItem user={user} />;
+    return <UserItem user={user.item} />;
   }
 
   render() {
