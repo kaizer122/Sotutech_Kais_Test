@@ -21,4 +21,9 @@ export const getPostsForUser = (userId) => {
            
         }
     };
- 
+    export const selectPost = (postId) => {
+        return {
+          type: SELECTED_POST,
+          payload: postId
+        };
+      };
