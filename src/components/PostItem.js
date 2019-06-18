@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import {
   Text,
-  TouchableWithoutFeedback,
+  TouchableOpacity,
   View,
   LayoutAnimation,
 } from 'react-native';
 import { connect } from 'react-redux';
 import { CardSection } from './common';
-import actions from '../actions';
+import { selectPost , commentShow } from '../actions';
 
 class PostItem extends PureComponent {
   componentWillUpdate() {
@@ -16,21 +16,24 @@ class PostItem extends PureComponent {
 
   render() {
     const { titleStyle } = styles;
-    const { id, title } = this.props.post;
+    const { post } = this.props;
     return (
-      <TouchableWithoutFeedback 
-        onPress={() => console.log(this.props.post.id) }
+      <TouchableOpacity 
+        onPress={() => {
+          this.props.selectPost(post) 
+          this.props.commentShow(post.id)}
+          }
       >
         <View>
           <CardSection>
             <Text style={titleStyle}>
-              {title}
+              {post.title}
             </Text>
           </CardSection>
       
         </View>
         
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
       
     );
   }
@@ -42,11 +45,10 @@ const styles = {
     paddingLeft: 25, 
     paddingRight: 10
   },
-  descriptionStyle: {
-    paddingLeft: 10,
-    paddingRight: 10
-  }
 };
 
+const mapStateToProps = state => {
+  return { selectedPost: state.selectedPost };
+};
 
-export default connect(null , actions ) ( PostItem );
+export default connect(mapStateToProps , {selectPost , commentShow} ) ( PostItem );

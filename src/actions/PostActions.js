@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
     POST_SHOW,
+    SELECTED_POST,
 } from './types';
 
 export const postShow = (posts) => {
@@ -21,4 +22,11 @@ export const getPostsForUser = (userId) => {
            
         }
     };
- 
+ export const selectPost = (post) => {
+       
+        return {
+          type: SELECTED_POST,
+          payload: post
+      }
+   };
+
