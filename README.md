@@ -2,9 +2,8 @@
 
 Project made for my Solutech interview. 
 
-Run it on expo playgrounds : 
-
-Or :
-1- Clone the Repo
-2- Run npm install
-3- Run npm start
+# Run it On Expo : 
+<br/>
+# Or Clone it then : 
+1- Run npm install <br/>
+2- Run npm start <br/>
