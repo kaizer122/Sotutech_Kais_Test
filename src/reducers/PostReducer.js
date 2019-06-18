@@ -1,6 +1,5 @@
 import {
     POST_SHOW,
-    POST_SET_SELECTED
   } from '../actions/types';
   
   const INITIAL_STATE = [];

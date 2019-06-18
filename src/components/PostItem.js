@@ -19,7 +19,7 @@ class PostItem extends PureComponent {
     const { id, title } = this.props.post;
     return (
       <TouchableWithoutFeedback 
-        onPress={() => console.log("pressed") }
+        onPress={() => console.log(this.props.post.id) }
       >
         <View>
           <CardSection>

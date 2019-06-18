@@ -4,6 +4,7 @@ import {
 } from './types';
 
 export const postShow = (posts) => {
+    posts.sort((a,b) => (a.id > b.id) ? -1 : ((b.last_nom > a.last_nom) ? 1 : 0));
     return {
         type: POST_SHOW,
         payload: posts 
