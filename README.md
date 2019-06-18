@@ -3,6 +3,7 @@
 Project made for my Solutech interview. 
 
 # Run it On Expo : <br/>
+https://expo.io/@kz30/Sotutech-Test
 
 # Or Clone it then : <br/>
 
