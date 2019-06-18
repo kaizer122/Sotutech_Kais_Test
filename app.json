@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Sotutech Test",
+    "name": "Sotutech Test Kais ladjemi",
     "slug": "Sotutech-Test",
     "privacy": "public",
     "sdkVersion": "33.0.0",
@@ -25,6 +25,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/kaizer122/Sotutech_Kais_Test"
   }
 }
