@@ -7,7 +7,7 @@ const RouterComponent = () => {
     return (
         <Router sceneStyle = {styles.routerStyle}>
             <Scene key = "root"  >
-                <Scene key ="users" 
+                <Scene key ="usersList" 
                 component = {UserList} 
                 title = "Users List" 
                 headerStyle={styles.headerStyle}

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Actions } from 'react-native-router-flux';
 import {
     POST_SHOW,
     SELECTED_POST,
@@ -29,4 +30,14 @@ export const getPostsForUser = (userId) => {
           payload: post
       }
    };
+
+export const deletePost = (postId) => {
+    return () => {
+        axios.delete('https://jsonplaceholder.typicode.com/posts/'+postId)
+          .then(() => {
+            Actions.usersList({ type: 'reset' });
+          });
+      };
+
+}; 
 
